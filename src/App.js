@@ -1,11 +1,16 @@
-import "./App.css";
+import React, { useState } from "react";
+import SearchBar from "./components/SearchBar";
+import RecipeList from "./components/RecipeList";
+// import RecipeDetail from "./components/RecipeDetail";
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to my recipe finder application!</h1>
-      </header>
+    <div>
+      <h1>Recipe Finder</h1>
+      <SearchBar setRecipes={setRecipes} />
+      <RecipeList recipes={recipes} />
     </div>
   );
 }
